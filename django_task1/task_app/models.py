@@ -14,7 +14,7 @@ class Ownable(models.Model):
     class Meta:
         abstract = True
 
-class RegisteredUser (models.Model):
+class RegisteredUser(models.Model):
 
     user = models.OneToOneField(User,
                                 on_delete=models.PROTECT)
@@ -23,13 +23,14 @@ class RegisteredUser (models.Model):
         'self',
         related_name= 'tracked_by',
         blank= True,
-        symmetrical= False
+        symmetrical= False,
+        verbose_name=_("Tracking")
     )
 
-class FeedItem (Ownable):
+class FeedItem(Ownable):
     content = models.CharField(
         "Content",
         max_length= 1000,
  		blank= True,
-        null= True
+        null= True,
     )
