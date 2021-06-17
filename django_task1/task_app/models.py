@@ -7,7 +7,8 @@ class Ownable(models.Model):
     user = models.ForeignKey(
         'auth.User',
         verbose_name=_("Author"),
-        related_name="%(class)ss"
+        related_name="%(class)ss",
+        on_delete=models.PROTECT
     )
 
     class Meta:
@@ -15,7 +16,8 @@ class Ownable(models.Model):
 
 class RegisteredUser (models.Model):
 
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User,
+                                on_delete=models.PROTECT)
 
     tracking = models.ManyToManyField(
         'self',
