@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'django_task1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-from db import DATABASES
+from .db import DATABASES
 
 
 # Password validation
