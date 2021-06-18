@@ -1,0 +1,17 @@
+{% extends "task_app/base.html" %}
+
+{% block content %}
+    <h2>Publishers</h2>
+
+    <span>You are logged in as: {{ user.username }}</span>
+
+    <ul><a href="{% url "posts" %}"> Все посты </a></ul>
+    <ul><a href="{% url "selfposts" %}"> Мои посты </a></ul>
+    <ul><a href="{% url "relatedposts" %}"> Посты друзей </a></ul>
+    <ul>
+        {% for object in publisher %}
+            <li>Пользователь: {{ object.user }}</li>
+            <li>Написал: {{ object.content }}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
