@@ -5,11 +5,14 @@ from django.contrib.auth.models import User
 from django.views.generic import ListView
 
 
+
 class FeedItemView(ListView):
     model = FeedItem
     template_name = 'task_app/posts.html'
     context_object_name = 'publisher'
     queryset = FeedItem.objects.all()
+
+
 
 class FeedItemUserView(ListView):
     model = FeedItem
@@ -20,6 +23,8 @@ class FeedItemUserView(ListView):
         if self.request.user.is_authenticated:
             queryset=FeedItem.objects.filter(user=self.request.user)
             return queryset
+
+
 
 
 class RelatedItemUserView(ListView):
