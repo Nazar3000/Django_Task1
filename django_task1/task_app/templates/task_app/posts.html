@@ -1,0 +1,10 @@
+{% extends "django_task1/base.html" %}
+{% load static from staticfiles %}
+{% block content %}
+    <h2>Publishers</h2>
+    <ul>
+        {% for content in object_list %}
+            <li>{{ content }}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
