@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from task_app.views import FeedItemView, FeedItemUserView
 
 urlpatterns = [
+    path('', FeedItemView.as_view(), name='posts'),
+    path('selfposts/', FeedItemUserView.as_view(), name='posts'),
     path('admin/', admin.site.urls),
+
 ]

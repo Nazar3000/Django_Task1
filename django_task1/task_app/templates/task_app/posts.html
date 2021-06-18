@@ -1,10 +1,12 @@
-{% extends "django_task1/base.html" %}
-{% load static from staticfiles %}
+{% extends "task_app/base.html" %}
+
 {% block content %}
     <h2>Publishers</h2>
+    <span>You are logged in as: {{ user.username }}</span>
     <ul>
-        {% for content in object_list %}
-            <li>{{ content }}</li>
+        {% for object in publisher %}
+            <li>Пользователь: {{ object.user }}</li>
+            <li>Написал: {{ object.content }}</li>
         {% endfor %}
     </ul>
 {% endblock content %}
