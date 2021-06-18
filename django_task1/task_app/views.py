@@ -5,10 +5,6 @@ from django.contrib.auth.models import User
 from django.views.generic import ListView
 
 
-
-
-
-
 class FeedItemView(ListView):
     model = FeedItem
     template_name = 'task_app/posts.html'
@@ -27,6 +23,7 @@ class FeedItemUserView(ListView):
 
 
 class RelatedItemUserView(ListView):
+
     model = FeedItem
     template_name = 'task_app/posts.html'
     context_object_name = 'publisher'

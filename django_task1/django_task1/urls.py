@@ -19,8 +19,8 @@ from task_app.views import FeedItemView, FeedItemUserView, RelatedItemUserView
 
 urlpatterns = [
     path('', FeedItemView.as_view(), name='posts'),
-    path('selfposts/', FeedItemUserView.as_view(), name='posts'),
-    path('relatedposts/', RelatedItemUserView.as_view(), name='posts'),
+    path('selfposts/', FeedItemUserView.as_view(), name='selfposts'),
+    path('relatedposts/', RelatedItemUserView.as_view(), name='relatedposts'),
     path('admin/', admin.site.urls),
 
 ]
