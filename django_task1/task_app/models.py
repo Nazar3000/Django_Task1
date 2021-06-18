@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 
+
+
 class Ownable(models.Model):
     user = models.ForeignKey(
         'auth.User',
@@ -14,8 +16,9 @@ class Ownable(models.Model):
     class Meta:
         abstract = True
 
-class RegisteredUser(models.Model):
 
+
+class RegisteredUser(models.Model):
     user = models.OneToOneField(User,
                                 on_delete=models.PROTECT)
 
@@ -26,6 +29,8 @@ class RegisteredUser(models.Model):
         symmetrical= False,
         verbose_name=_("Tracking")
     )
+
+
 
 class FeedItem(Ownable):
     content = models.CharField(
